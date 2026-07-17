@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NEON // TETRIS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="scanlines"></div>
+
+  <div class="wrap">
+    <header class="title">
+      <h1><span class="t-neon">NEON</span><span class="t-slash">//</span><span class="t-white">TETRIS</span></h1>
+    </header>
+
+    <main class="stage">
+      <div class="board-frame">
+        <canvas id="board"></canvas>
+        <div id="overlay" class="overlay hidden">
+          <div class="overlay-box">
+            <p id="overlay-title">PAUSED</p>
+            <p id="overlay-msg" class="overlay-msg">按 P 繼續遊戲</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="panel">
+        <section class="panel-block">
+          <h2>NEXT</h2>
+          <canvas id="next" width="120" height="120"></canvas>
+        </section>
+
+        <section class="panel-block stats">
+          <div class="stat">
+            <span class="stat-label">SCORE</span>
+            <span class="stat-value" id="score">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">HIGH SCORE</span>
+            <span class="stat-value stat-high" id="highscore">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">LEVEL</span>
+            <span class="stat-value" id="level">1</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">LINES</span>
+            <span class="stat-value" id="lines">0</span>
+          </div>
+        </section>
+
+        <section class="panel-block controls">
+          <h2>CONTROLS</h2>
+          <ul>
+            <li><kbd>←</kbd><kbd>→</kbd><span>移動</span></li>
+            <li><kbd>↓</kbd><span>軟降</span></li>
+            <li><kbd>↑</kbd><span>旋轉</span></li>
+            <li><kbd>Space</kbd><span>硬降</span></li>
+            <li><kbd>P</kbd><span>暫停</span></li>
+            <li><kbd>R</kbd><span>重新開始</span></li>
+          </ul>
+        </section>
+      </aside>
+    </main>
+  </div>
+
+  <script src="constants.js"></script>
+  <script src="piece.js"></script>
+  <script src="board.js"></script>
+  <script src="input.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
